@@ -29,9 +29,16 @@ public class Main
   /* loadCountries() reads in the data from the countries-data.csv file and fills in the countryArray with data. You need to add the loop that reads in the country data into the array. */
   public void loadCountries() 
   {
+    try{
     // Open the data file. Please note that the file structure we're working with requires the full file path as shown here unlike what you saw in runestone where the file name was sufficient.
     File file = new File("/workspaces/Countries/workspace/countries-data.csv");
+    Scanner scan = new Scanner(file);
     
+
+    scan.close();
+    }catch(IOException e){
+      System.out.println("couldn't open the file");
+    }
     //create a scanner and a loop to read from the file until you've read everything.
     // inside the loop you'll need to read in a line from the file and use "split" to break up the data into destinct parts.
     // create a new Country using your constructor with 4 arguments (each of the arguments is a different part of the line you've read in)
@@ -56,7 +63,7 @@ public class Main
   /* nextButton should increment index. If the index is greater than 9, reset it back to 0. Clear the outputLabel to empty string using setText, and call showCountry();*/
   public void nextButtonClick()
   {
-    
+    userInput.
   }
   
   /* reviewButton should get the country at index from the countryArray, call its toString() method and save the result, print it out with System.out.println and as an argument to outputLabel.setText( text to print out ); */
@@ -69,7 +76,7 @@ public class Main
   */
   public void quizButtonClick()
   {
-    Scanner scan = new Scanner(System.in); 
+    String userAnswer = userInput.getText();
     
     
     
